@@ -8,8 +8,6 @@ const myLibrary = [
 
 function displayBooks() {
   const container = document.getElementById("book-container");
-
-  // 1. Create the top of the table
   const tableHeader = `
     <table class="table">
       <thead>
@@ -22,8 +20,6 @@ function displayBooks() {
         </tr>
       </thead>
       <tbody>`;
-
-  // 2. Map through the books to create ONLY the rows
   const tableRows = myLibrary.map((book, index) => `
     <tr>
       <th scope="row">${index + 1}</th>
@@ -33,11 +29,7 @@ function displayBooks() {
       <td>${book.interest}</td>
     </tr>
   `).join('');
-
-  // 3. Close the table tags
   const tableFooter = `</tbody></table>`;
-
-  // 4. Combine everything and inject into the HTML
   container.innerHTML = tableHeader + tableRows + tableFooter;
 }
 function addBook(author,title,pages, interest){
